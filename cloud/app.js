@@ -12,5 +12,10 @@ app.get('/hello', function(req, res) {
   res.render('hello', { message: 'Congrats, you just set up your app!' });
 });
 
+app.get('/weixin', function(req, res) {
+  var echostr=req.param('echostr');
+  res.end(echostr);
+});
+
 // 最后，必须有这行代码来使 express 响应 HTTP 请求
 app.listen();
